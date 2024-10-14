@@ -13,9 +13,13 @@ const temperature_living_value = document.getElementById('temperature-value-livi
 const dateElement = document.getElementById('date');
 const clockvalue = document.getElementById('time');
 
+<<<<<<< HEAD
 // Add an event listener to the toggle switch
 kitchen_lights.addEventListener('change', () => {
   // Toggle the switch on or off
+=======
+kitchen_lights.addEventListener('change', () => {
+>>>>>>> 3348338 (test)
   if (kitchen_lights.checked) {
     kitchen_lights_icon.style.color = 'yellow';
   } else {
