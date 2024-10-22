@@ -77,9 +77,7 @@ var app = (function () {
 
 })();
 $(document).ready(function() {
-  let lastFetchTime; // Variable to store the last fetch time
-
-  // Function to fetch weather data
+  let lastFetchTime;
   function fetchWeather() {
     const current_temp = $('#current-temp');
     const max_temp = $('#max-temp');
@@ -87,18 +85,16 @@ $(document).ready(function() {
     const humidity = $('#humidity');
     const sunrise = $('#sunrise');
     const sunset = $('#sunset');
-    const lastUpdate = $('#last-update'); // Element to show the last update time
+    const lastUpdate = $('#last-update');
 
-    // Get the value from the city input field
     const city = $('#city-input').val();
 
-    // Check if the input is not empty
     if (city.trim() !== "") {
       $.ajax({
         url: `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=cedf58223ea889a325c281a9a5a62999`,
         dataType: 'json'
       }).done(function(data) {
-        console.log(data); // Outputs the weather data to the console
+        console.log(data); 
 
         current_temp.text(data.main.temp + ' °C');
         max_temp.text(data.main.temp_max + ' °C');
@@ -108,21 +104,18 @@ $(document).ready(function() {
         const sunriseTime = new Date(data.sys.sunrise * 1000);
         const sunsetTime = new Date(data.sys.sunset * 1000);
 
-        // Get hours and minutes
         const sunriseHours = sunriseTime.getHours();
         const sunriseMinutes = sunriseTime.getMinutes();
         const sunsetHours = sunsetTime.getHours();
         const sunsetMinutes = sunsetTime.getMinutes();
 
-        // Format as "10h30m"
         const sunriseFormatted = `${sunriseHours}h${sunriseMinutes.toString().padStart(2, '0')}m`;
         const sunsetFormatted = `${sunsetHours}h${sunsetMinutes.toString().padStart(2, '0')}m`;
 
         sunrise.text(sunriseFormatted);
         sunset.text(sunsetFormatted);
 
-        // Update the last update time
-        lastFetchTime = new Date(); // Store the last fetch time
+        lastFetchTime = new Date(); 
         updateLastUpdate(lastFetchTime);
       }).fail(function() {
         console.error('Error fetching weather data');
@@ -133,10 +126,10 @@ $(document).ready(function() {
     }
   }
 
-  // Function to update the last update time display
+
   function updateLastUpdate(fetchTime) {
     const now = new Date();
-    const timeDiff = Math.floor((now - fetchTime) / 1000); // Difference in seconds
+    const timeDiff = Math.floor((now - fetchTime) / 1000);
 
     let timeString;
 
@@ -153,20 +146,20 @@ $(document).ready(function() {
     $('#last-update').text(`Last Update: ${timeString}`);
   }
 
-  // Fetch weather data when the button is clicked
+
   $('#get-weather').click(function() {
     fetchWeather();
   });
 
-  // Automatically fetch weather data on page load
+
   fetchWeather();
 
-  // Update the last update time every second
+
   setInterval(function() {
-    if (lastFetchTime) { // Only update if lastFetchTime has been set
+    if (lastFetchTime) { 
       updateLastUpdate(lastFetchTime);
     }
-  }, 1000); // 1000 milliseconds = 1 second
+  }, 1000); 
 });
 
 

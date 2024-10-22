@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/27d0bdc757.js" crossorigin="anonymous"></script>
+</head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand ms-3" href="index_v2.html"> <h4>Home Sweet Home</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active text-light">
+              <a class="nav-link text-light" href="index_v2.html">Dashboard <span class="sr-only" ></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="history.html">History</a>
+            </li>
+    
+          </ul>
+        </div>
+      </nav>
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="card mt-3 ms-3">
+            <div class="card-header text-center"><h5>Kitchen</h5></div>
+            <div class="card-body">
+              <span>
+                <i class="fa-solid fa-temperature-quarter"></i>Temperature
+              </span>
+              <span style="float: right;" id="temperature-kitchen">
+                <span id="temperature-value-kitchen">22.6</span>&deg;C
+              </span>
+            <p class="text-muted ">5 minutes ago</p>
+            <span>
+                <i class="fa-regular fa-lightbulb" id="kitchen-lights-icon"></i>Light
+            </span>
+            <span style="float: right"><div class="form-check form-switch">
+              <input class="form-check-input"
+                  type="checkbox"
+                  id="kitchen-lights">
+
+          </div>
+
+            </span>
+            <p class="text-muted" id="kitchen-lights-time">10 minutes ago</p>
+            <span>
+                <i class="fa-regular fa-eye"></i>West Window
+            </span>
+            <span style="float: right; color: green">Open</span>
+            <p class="text-muted">15 minutes ago</p>
+            <span>
+                <i class="fa-regular fa-eye"></i>North Window
+            </span>
+            <span style="float: right; color: green">Open</span>
+            <p class="text-muted">15 minutes ago</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card mt-3">
+            <div class="card-header text-center"><h5>Living Room</h5></div>
+            <div class="card-body">
+                <span>
+                    <i class="fa-solid fa-temperature-quarter" style="color: red;"></i>Temperature
+                </span>
+                <span style="float: right;" id="temperature-living">
+                  <span id="temperature-value-living">22.6</span>&deg;C
+                </span>
+                <p class="text-muted">5 minutes ago</p>
+                <span>
+                    <i class="fa-regular fa-lightbulb " id="living-ceiling-lights-icon"></i> Ceiling Light
+                </span>
+                <span style="float: right; color: red" ><div class="form-check form-switch">
+                  <input class="form-check-input"
+                      type="checkbox"
+                      id="living-ceiling-lights">
+    
+              </div></span>
+                <p class="text-muted" id="living-ceiling-lights-time">7 minutes ago</p>
+                <span>
+                    <i class="fa-regular fa-lightbulb" id="living-ambient-lights-icon"></i>Ambient Lights
+                </span>
+                <span style="float: right; color : green "><div class="form-check form-switch">
+                  <input class="form-check-input"
+                      type="checkbox"
+                      id="living-ambient-lights">
+    
+              </div></span>
+                <p class="text-muted" id="living-ambient-lights-time">7 minutes ago</p>
+                <span>
+                    <i class="fa-solid fa-music" style="color:blue;" id="living-music-icon"></i>Ambient Music
+                </span>
+                <span style="float: right; color: green;"><div class="form-check form-switch">
+                  <input class="form-check-input"
+                      type="checkbox"
+                      id="living-music">
+    
+              </div></span>
+                <p class="text-muted" id="living-music-time">17 minutes ago</p>            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mt-3 me-3">
+            <div class="card-header text-center"><h5>Clock</h5></div>
+              <div class="card-body">
+                <p><i class="fa-regular fa-clock" style="color: blue" ></i>Time
+                <span style="float: right;" id ="time">22:30:00</span></p>
+                <p><i class="fa-solid fa-calendar-days" ></i>Date
+                <span style="float: right;" id ="date">2018-09-18</span></p>
+                <p><i class="fa-regular fa-sun" style="color: rgb(211, 211, 28)" ></i>Sunrise/Sunset above horizon
+             </div>
+            </div>
+          </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card mt-3 ms-3">
+            <div class="card-header text-center"><h5>Weather</h5></div>
+            <div class="card-body">
+              <span>
+               <p> <i class="fa-solid fa-clock" style="color: blue"></i> Current Temperature
+              </span>
+              <span style="float: right;" id="temperature-garden">
+                <span id="current-temp">18.5</span>&deg;C</p>
+              </span>
+
+              <span>
+                <p><i class="fa-solid fa-temperature-quarter" id="garden-lights-icon"></i> Max. Temperature
+              </span>
+              <span style="float: right;" id="max-temp"> 19.94</span>&deg;C
+
+
+              <span>
+                <p><i class="fa-solid fa-temperature-quarter"></i> Min. Temperature
+              </span>
+              <span style="float: right;" id="min-temp">19.94</span>&deg;C</p>
+
+              <span>
+                <p><i class="fa-solid fa-temperature-quarter"></i> Humidity
+              </span>
+              <span style="float: right;" id="humidity">80%</span></p>
+
+              <span>
+                <p><i class="fa-solid fa-clock"></i> Sunrise Time
+              </span>
+              <span style="float: right;" id="sunrise">7h46</span></p>
+              <span>
+                <p><i class="fa-solid fa-clock"></i> Sunset Time
+              </span>
+              <span style="float: right;" id="sunset">18h54</span></p>
+
+              <p><small class="text-muted">Last Update <span id="last-update" style="float: right;">11 seconds ago</span></small></p>
+              <div style="display: flex; justify-content: space-between">
+              <div class="input-group w-50 ms-5">
+                <input type="text" class="form-control text-start" placeholder="City" id="city-input" value="Leiria">
+              </div>
+              <div"> <button class="btn btn-success me-5" id="get-weather">GET</button></div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js "></script>
+      <script src="js/index_c.js"></script>
+    </head> 
+   </body>
+</html>
